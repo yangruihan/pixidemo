@@ -33,11 +33,15 @@ loader
 function setup() {
     let c = new Sprite(resources['sprites/c.png'].texture);
 
+    c.anchor.set(0.5, 0.5);
+
     c.x = 200;
     c.y = 150;
     c.position.set(100, 100);
     c.width = 64;
     c.height = 64;
+
+    c.rotation = 0.5;
 
     app.stage.addChild(c);
 }
