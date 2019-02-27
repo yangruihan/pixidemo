@@ -16,23 +16,16 @@ let app = new PIXI.Application({
     resolution: 1,
 });
 
-// fullscreen set
-// app.renderer.view.style.position = "absolute";
-// app.renderer.view.style.display = "block";
-// app.renderer.autoResize = true;
-// app.renderer.resize(window.innerWidth, window.innerHeight);
-
-console.log(app.renderer.view.width);
-console.log(app.renderer.view.height);
-
 // Add the canvas that Pixi automatically created for you to the HTML document
 document.body.appendChild(app.view);
+
+const playerResUrl = "sprites/player.png";
 
 let state = play;
 
 // load an image and run the `setup` function when it's done
 loader
-    .add('sprites/c.png')
+    .add(playerResUrl)
     .load(setup);
 
 let player;
@@ -44,7 +37,7 @@ function setup() {
 }
 
 function initPlayer() {
-    player = new Sprite(resources['sprites/c.png'].texture);
+    player = new Sprite(resources[playerResUrl].texture);
 
     player.anchor.set(0.5, 0.5);
 
